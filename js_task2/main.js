@@ -93,18 +93,16 @@ console.log('result isFalsy', isFalsy(false));
 
 function findWordInText(text, word, register) {
   if ( register ) {
-    regexp = new RegExp(String.raw`(\S*${word}\S*[^\!|\,|\.|\-])`, 'g');
-  } else regexp = new RegExp(String.raw`(\S*${word}\S*[^\!|\,|\.|\-])`, 'gi');
+    regexp = new RegExp(String.raw`(${word})`, 'g');
+  } else regexp = new RegExp(String.raw`(${word})`, 'gi');
   const resultArray = text.match(regexp) || [];
   
   return resultArray.map( item => item.trim() );
 }
-const text = `Больше сыра - больше дырок,
-               больше дырок - меньше сыра,
-                больше сыра - меньше сыра? Большевик!`;
-console.log('result findWordInText', findWordInText(text, 'больше', false) );
+const text = `бла Бла блабла воблаура`;
+console.log('result findWordInText', findWordInText(text, 'бла', false) );
+console.log('result findWordInText', findWordInText(text, 'Бла', true) );
 console.log('result findWordInText', findWordInText(text, 'больше', true) );
-console.log('result findWordInText', findWordInText(text, 'больше1', true) );
 
 
 
