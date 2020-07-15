@@ -14,7 +14,7 @@ console.log('result endsWith', endsWith('Islands of the Earth', 'Earth') );
 
 function startsWith(str, substr) {
   const resultSearch = str.indexOf(substr);
-  return resultSearch === 0 ? true : false;
+  return resultSearch === 0
 }
 console.log('result startsWith', startsWith('How long does it take you to get there', 'How long') );
 
@@ -37,7 +37,7 @@ function isKebabCase(str) {
     return result;
   }
   const arrayRightParts = arrayPartOfString.filter(checkWorstItem);
-  return arrayRightParts.length == arrayPartOfString.length ? true : false;
+  return arrayRightParts.length == arrayPartOfString.length 
 }
 console.log( 'result kebab', isKebabCase(' hitech ') );
 console.log( 'result kebab', isKebabCase(' hi-tech ') );
@@ -53,7 +53,7 @@ function isSnakeCase(str) {
     return result;
   }
   const arrayRightParts = arrayPartOfString.filter(checkWorstItem);
-  return arrayRightParts.length == arrayPartOfString.length ? true : false;
+  return arrayRightParts.length == arrayPartOfString.length
 }
 console.log('result snake', isSnakeCase('hi_tech') );
 console.log('result snake', isSnakeCase('hi_t-ech') );
@@ -61,9 +61,7 @@ console.log('result snake', isSnakeCase('hi_Tech') );
 
 function isCamelCase(str) {
   const arrayMatches = str.match(/([a-z,\d+]+[A-Z,\d+]*)*/g);
-  if ( arrayMatches.join('') === str ) {
-    return true;
-  } else return false;
+  return arrayMatches.join('') === str
 }
 console.log( 'result CamelCase', isCamelCase('email') );
 console.log( 'result sCamelCase', isCamelCase('eMailMyFriend') );
@@ -78,7 +76,7 @@ console.log( 'result isNaN', isNaN(+'d') );
 function isFinite(value) { 
   const positivInfinity = 1/0;
   const negativInfinity = 1/-0;
-  return value === positivInfinity || value === negativInfinity ? true : false; 
+  return value === positivInfinity || value === negativInfinity 
 } 
 console.log('result Infinity', isFinite(1/0) );
 
@@ -94,22 +92,20 @@ console.log('result isFalsy', isFalsy(0));
 console.log('result isFalsy', isFalsy(false));
 
 function findWordInText(text, word, register) {
-  if ( !register ) {
-    text = text.toLowerCase();
-    word = word.toLowerCase();
-  }
-  let position = 0;
-  let count = 0;
-  while (true) {
-    let posResult = text.indexOf(word, position);
-    if (posResult !== -1) {
-    count ++;
-    position = posResult + word.length;
-    } else break;
-  }
-  return count;
+  if ( register ) {
+    regexp = new RegExp(String.raw`(\S*${word}\S*[^\!|\,|\.|\-])`, 'g');
+  } else regexp = new RegExp(String.raw`(\S*${word}\S*[^\!|\,|\.|\-])`, 'gi');
+  const resultArray = text.match(regexp) || [];
+  
+  return resultArray.map( item => item.trim() );
 }
-console.log('result findWordInText', findWordInText('Hi there! I\'d like to offer you good idea!', 'like', true) );
+const text = `Больше сыра - больше дырок,
+               больше дырок - меньше сыра,
+                больше сыра - меньше сыра? Большевик!`;
+console.log('result findWordInText', findWordInText(text, 'больше', false) );
+console.log('result findWordInText', findWordInText(text, 'больше', true) );
+console.log('result findWordInText', findWordInText(text, 'больше1', true) );
+
 
 
 
