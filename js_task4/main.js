@@ -6,24 +6,23 @@ const Mammal = {
 const Human = { 
   run: function() { console.log(`${this.name} is running`) } 
 }
+
 function Man(name, age) { 
   this.name = name; 
   this.age = age; 
 }
-
-function spawn(funcConstructor) {
+Object.setPrototypeOf(Human, Mammal);
+Man.prototype = Human;
+function spawn(funcConstructor, ...args) {
   const myObject = Object.create(funcConstructor.prototype); 
-  funcConstructor.apply(myObject, Object.values(arguments).slice(1));
-  return Object.assign( myObject, Mammal, Human);
+  funcConstructor.apply(myObject, args);
+  return  myObject;
 }
 const myObject = spawn(Man, 'Elena', 23);
-
 console.log(myObject.name);
 console.log(myObject.age);
 myObject.eat();
 myObject.run(); 
-
-
 
 
 // --------------task2--------------
@@ -49,7 +48,7 @@ console.dir(webdev);
 
 // --------------task3--------------
 Object.prototype.toString = function() {
-return Object.entries(this).map( ([key, value]) =>  [' ' + key + ': ' + value]  ).join();
+return Object.entries(this).map( ([key, value]) =>  [key + ': ' + value]  ).join();
 }
 const obj = { 
   prop1: 1, 
@@ -66,7 +65,7 @@ function add(a,b) {
   }
   Function.prototype.delay = function(time) {
     return (...arg) => {
-      let bindFunc = this.bind(null, ...arg);
+      let bindFunc = this.bind(this, ...arg);
       setTimeout(bindFunc, time);
     }
   }
@@ -118,7 +117,7 @@ const Bicycle = (name, startPoint) => {
     name,
     startPoint,
   };
-  return Object.assign(Bicycle, moves());
+  return Object.assign(bicycle, moves());
 };
 
 const russianTank = Tank('T90', 'Moscow');
