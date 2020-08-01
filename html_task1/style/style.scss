@@ -7,29 +7,35 @@ $pink-color: #FF7F7F;
   font-family: "Montserrat Regular"; 
   src: url("../assets/font/Montserrat-Light.ttf"); 
 }
-
+body {
+  background-color: $pink-color;
+  overflow-x:hidden;
+}
 .main-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  height: 1156px;
+  height: calc(100vw*1.56);
   width: 100%;
   background-position: 0, 0;
   background: url(../assets/img/background.png) no-repeat;
-  background-size: cover;
+  background-size: contain;
   z-index: -5;
 }
 
 .wrapper {
   flex-direction: column;
   .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 16%;
+    height: 16vh;
     opacity:0.75;
     background-color: $pink-color;
-    z-index: -4;
+    z-index: 7;
   }
 }
 
@@ -43,6 +49,7 @@ $pink-color: #FF7F7F;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // height: 128px;
     height: 128px;
     margin: 0;
     padding: 0;
@@ -91,7 +98,7 @@ $pink-color: #FF7F7F;
 
 .main-article {
   &__body {
-    margin-top: 137px;
+    margin-top: 260px;
     margin-left: 96px;
   }
   &__title h2 {
@@ -153,16 +160,19 @@ $pink-color: #FF7F7F;
     z-index: -6;
   
   &__body {
-    max-width: 940px;
-    padding-top: 330px;
+    width: 75%;
+    padding-top: calc(15%*1.56);
     margin: 0px auto;
       }
   
   &__header {
     text-align: center;
+    z-index: 6;
   }
   
-  &__title {
+  &__title h3 {
+    font-size: 37px;
+    padding-left: 5px;
     color: white;
     letter-spacing: 3px;
   }
@@ -230,14 +240,16 @@ $pink-color: #FF7F7F;
 
 // _____________________Article order______________
 .order {
+  background-color: white;
   &__body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 120px;
+    padding-top: 120px;
     margin-left: 135px;
-    margin-bottom: 56px;
+    padding-bottom: 56px;
     width: 84%;
+    background-color: white;
 
   }
 
@@ -287,7 +299,8 @@ $pink-color: #FF7F7F;
     padding-top: 180px;
     margin: 0px;
     text-align: center;
-    
+    background-color: white;
+    width: 100%; //!!!
   }
   &__fly-item3 {
     position: absolute;
@@ -306,15 +319,16 @@ $pink-color: #FF7F7F;
   &__title h3 {
     margin: 0px;
   }
-
   &__text {
     font-family: Montserrat Regular;
     font-size: 27px;
     color: $pink-color;
     margin-top: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-
-  &__form {
+   &__form {
     margin: 84px auto 0px;
     display: flex;
     justify-content: space-between;
@@ -352,15 +366,18 @@ $pink-color: #FF7F7F;
 // ________________________FOOTER_________________
 
 .footer {
+background-color: white;
 
   &__body {
+    
     position: relative;
     background: url(../assets/img/footer_background.png) no-repeat;
     background-size: cover;
     height: 956px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-end; 
+    flex-wrap: wrap;
   }
   &__fly-item5 {
     position: absolute;
@@ -369,9 +386,9 @@ $pink-color: #FF7F7F;
   }
 
   &__description {
-    max-height: 284px;
-    flex-basis: 40%;
+    height: 284px;
     padding-bottom: 168px;
+    width: 470px; //!!!
   }
 
   &__title h4 {
@@ -407,21 +424,14 @@ $pink-color: #FF7F7F;
     }
   }
 
-  // .footer__about
-  &__group {
-    padding-bottom: 168px;
-    flex-basis: 47%;
-    justify-content: space-between;
-    display: flex;
-
-
-  }
   &__about {
-    flex-basis: 35%;
+    width: 265px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-height: 284px;
+    height: 284px;
+    padding-bottom: 168px;
+
 
   }
 
@@ -446,19 +456,23 @@ $pink-color: #FF7F7F;
   }
 
   &__services {
-    flex-basis: 33%;
+    width: 247px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-height: 284px;
+    height: 284px;
+    padding-bottom: 168px;
+
   }
 
   &__other {
-    flex-basis: 25%;
+    width: 182px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-height: 284px;
+    height: 284px;
+    padding-bottom: 168px;
+    
   }
 }
 
