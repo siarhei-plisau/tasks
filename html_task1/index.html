@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" media="only screen and (max-width: 480px)" href="style/small-device.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 1200px)" href="style/midle-device.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 800px)" href="style/small-device.css" />
     <link rel="shortcut icon" href="assets/img/small_sushi3.svg">
     <title>Sushime</title>
 </head>
@@ -34,6 +35,7 @@
       </div>
     </header>
     <main class="main">
+      <div class="main-overlay"></div>
       <article class="main-article">
         <div class="main-article__body">
           <div class="main-article__title">
@@ -139,10 +141,12 @@
           <div class="subscribe__title title">
             <h3>subscribe</h3>
           </div>
-          <p class="subscribe__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vi-<br>
-              vamus lacinia odio vita e vestibulum vestibulum.
-          </p>
+          <div class="subscribe__text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus <br>
+              lacinia odio vita e vestibulum vestibulum.
+            </p>  
+          </div>
           <form class="subscribe__form">
             <input class="subscribe__input" type="email" placeholder="Your Email">
             <button class="subscribe__button button" type="submit">subscribe</button>
@@ -159,9 +163,9 @@
           </div>
           <div class="footer__subtitle">
             <p>
-                Lorem ipsum dolor sit amet, consecte-<br>
-                tur adipiscing elit. Aliquam at dignis-<br>
-                sim nunc, id maximus ex. Etiam nec<br>
+                Lorem ipsum dolor sit amet, consectetur
+                 adipiscing elit. Aliquam at dignissim
+                 nunc, id maximus ex. Etiam nec
                 dignissim elit, at dignissim enim. 
             </p>
           </div>
@@ -172,7 +176,7 @@
             <a href="#"><img src="assets/img/WhatsApp.svg" alt="telegram"></a>
           </div>
         </section>
-        <div class="footer__group">
+        <!-- <div class="footer__group"> -->
           <section class="footer__about">
             <div class="footer__title">
               <h4>About</h4>
@@ -207,7 +211,7 @@
               <li class="footer__item"><a class="footer__link" href="#">Privacy</a></li>
             </ul>
           </section>
-        </div>
+        <!-- </div> -->
       </div>
     </footer>
   </div>
