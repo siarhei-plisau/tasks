@@ -426,6 +426,7 @@ body {
   background-color: #F3F3F3;
   height: 64px;
   border-radius: 32px;
+  padding-bottom: 3px;
 }
 
 .subscribe__input {

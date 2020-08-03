@@ -155,6 +155,8 @@
 }
 
 .order__body {
+  padding-left: 0;
+  margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

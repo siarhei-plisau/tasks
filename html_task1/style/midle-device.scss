@@ -128,7 +128,8 @@ $pink-color: #FF7F7F;
 .order {
   background-color: white;
   &__body {
-
+  padding-left: 0;
+    margin: 0 auto;
     justify-content: center;
   }
   &__description {

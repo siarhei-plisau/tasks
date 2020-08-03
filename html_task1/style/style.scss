@@ -336,6 +336,7 @@ body {
     background-color: #F3F3F3;
     height: 64px;
     border-radius: 32px;
+    padding-bottom: 3px;
   }
 
   &__input {
@@ -357,6 +358,7 @@ body {
     width: 222px;
     background-color: $pink-color;
     color: white;
+    // height: 62px;
     transition: all 0.3s ease;
       &:hover {
       box-shadow: 0 0 10px rgb(110, 107, 107);
