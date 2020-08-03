@@ -575,7 +575,7 @@
       flex-basis: auto;
   padding-left: 0px;
   padding-bottom: 10px;
-  height: 138px;
+  height: 148px;
 }
 
 .footer__list {
@@ -606,7 +606,7 @@
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
   padding-bottom: 10px;
-  height: 140px;
+  height: 148px;
 }
 
 .footer__other {
@@ -616,6 +616,6 @@
       flex-basis: auto;
   padding-bottom: 10px;
   height: 93px;
-  width: 260px;
+  width: 250px;
 }
 /*# sourceMappingURL=small-device.css.map */
