@@ -1,6 +1,6 @@
 // ___________Task1__________
 function getRandomIntegerNumber(min, max) {
-  return Math.floor( Math.random() * (max - min) + min );
+  return Math.round( min - 0.5 + Math.random() * (max - min + 1) );
 }
 
 function creatRundomArray(quantityElems) {
@@ -14,7 +14,7 @@ console.log(`Target array: ${targetArray1}`);
 console.log(`The lagest value: ${Math.max(...targetArray1)}`);
 console.log(`The smallest value: ${Math.min(...targetArray1)}`);
 console.log(`The total sum: ${totalSum}`);
-console.log(`The arifmetics mean: ${+(totalSum/targetArray1.length).toFixed(2)}`);
+console.log(`The arifmetics mean: ${(totalSum/targetArray1.length).toFixed(2)}`);
 
 // ___________Task2__________
 function changMainDiagonalOfArray() {
@@ -35,13 +35,12 @@ console.table(changMainDiagonalOfArray());
 
 // ___________Task3__________
 
-const targetArray2 = creatRundomArray(20);
 console.log(`---------Task3-------`);
-console.log(`Array before changing: ${targetArray2}`);
-console.log(`Array after changing: ${targetArray2.map(item => item*5)}`);
+console.log(`Array after changing: ${Array.from(Array(20), (item, index) => index*5 )}`);
 
 // ___________Task4__________
 function getMaxSequenceOfEqueilElems(array) {
+  if (!array.length) throw new Error('array is empty');
   let begin = 0; 
   let end = 0;
   let tempArray = []; 
@@ -49,15 +48,15 @@ function getMaxSequenceOfEqueilElems(array) {
     if ( array[i] === array[i - 1] ) {
         end = i;
     } else {
-        ( begin - end ) && tempArray.push(array.slice(begin, end + 1));
+        tempArray.push(array.slice(begin, end + 1));
         begin = i;
         end = i;
     }
   }
-  ( begin - end ) && tempArray.push(array.slice(begin, end + 1));
+ tempArray.push(array.slice(begin, end + 1));
   return !tempArray.length ? [] : tempArray.sort( (a, b) => b.length - a.length )
-                   .filter( (item, i, array) => array[0].length === array[i].length )
-                   .sort( (a, b) => b[0] - a[0] )[0]
+                                           .filter( (item, i, array) => array[0].length === array[i].length )
+                                           .sort( (a, b) => b[0] - a[0] )[0]
 }
 console.log(`---------Task4-------`);
 const array1 = [1,1,1,1,2,2,2,2,3,3,3,4,4,4];
@@ -67,6 +66,7 @@ console.log( getMaxSequenceOfEqueilElems(array2) );
 
 // ___________Task5__________
 function getMaxIncreasingSequence(array, quantificator) {
+  if (!array.length) throw new Error('array is empty');
   let begin = 0; 
   let end = 0;
   let tempArray = []; 
@@ -91,10 +91,11 @@ console.log( getMaxIncreasingSequence(array4, 1) );
 
 // ___________Task6__________
 function getMostFrequentNumber(array) {
+  if (!array.length) throw new Error('array is empty');
   const bufferArrayOfAccordance = [];
   const currentArray = array.slice();
   const buferDubbleItems = [];
-  currentArray.some ( (item) => {
+  currentArray.some( (item) => {
     if ( !buferDubbleItems.includes(item) ) { 
       buferDubbleItems.push(item);
       bufferArrayOfAccordance.push( currentArray.filter((elem2) => item === elem2) );
@@ -104,20 +105,24 @@ function getMostFrequentNumber(array) {
   console.log(`${bufferArrayOfAccordance[0][0]} (${bufferArrayOfAccordance[0].length} times)`);
 }
 const array5 = [1,1,2,2,2,2,3,1,4,2];
+// const array5 = [];
+
 console.log(`---------Task6-------`);
 getMostFrequentNumber(array5);
 
 // ___________Task7__________
 function getIndexOfElement(array, targetElement, first = 0, last = array.length-1) {
-  let IndexMiddleOfArray = Math.floor( (first + (last - first)/2) );
-  if ( array[IndexMiddleOfArray] === targetElement ) return IndexMiddleOfArray;
-  if ( last - 1 === first)  return array[first] === targetElement ? first : last;
-  targetElement > array[IndexMiddleOfArray] && getIndexOfElement (array, targetElement, IndexMiddleOfArray, end);
-  targetElement < array[IndexMiddleOfArray] && getIndexOfElement (array, targetElement, first, IndexMiddleOfArray);
+  const IndexMiddleOfArray = Math.floor( (first + (last - first)/2) );
+  if ( array[IndexMiddleOfArray] == targetElement ) return IndexMiddleOfArray;
+  if ( (last - 1) === first)  return array[first] === targetElement ? first : last;
+  if ( targetElement > array[IndexMiddleOfArray] ) return getIndexOfElement(array, targetElement, IndexMiddleOfArray, last);
+  if ( targetElement < array[IndexMiddleOfArray] ) return getIndexOfElement(array, targetElement, first, IndexMiddleOfArray);
 }
-const array6 = [1,3,5,7,9,11,13,15,17,19,21,23];
+// const array6 = [1,3,5,7,9,11,13,15,17,19,21,23];
+const array6 = [1,3,5,6,7];
+
 console.log(`---------Task7-------`);
-console.log( getIndexOfElement(array6, 11));
+console.log( getIndexOfElement(array6, 7));
 
 // ___________Task8__________
 function increasingSelectionSort (array) {
