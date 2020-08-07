@@ -112,17 +112,27 @@ getMostFrequentNumber(array5);
 
 // ___________Task7__________
 function getIndexOfElement(array, targetElement, first = 0, last = array.length-1) {
+  if (!array.length) throw new Error('array is empty');
+  if (last === 0 ) return array[last] === targetElement ? last : -1;
   const IndexMiddleOfArray = Math.floor( (first + (last - first)/2) );
   if ( array[IndexMiddleOfArray] == targetElement ) return IndexMiddleOfArray;
+  if ( (last - 1) === first  && array[first] !== targetElement && array[last] !== targetElement) return -1;
   if ( (last - 1) === first)  return array[first] === targetElement ? first : last;
   if ( targetElement > array[IndexMiddleOfArray] ) return getIndexOfElement(array, targetElement, IndexMiddleOfArray, last);
   if ( targetElement < array[IndexMiddleOfArray] ) return getIndexOfElement(array, targetElement, first, IndexMiddleOfArray);
 }
 // const array6 = [1,3,5,7,9,11,13,15,17,19,21,23];
 const array6 = [1,3,5,6,7];
-
+const array8 = [1];
+const array9 = [1,12];
 console.log(`---------Task7-------`);
 console.log( getIndexOfElement(array6, 7));
+console.log( getIndexOfElement(array8, 10));
+console.log( getIndexOfElement(array9, 1));
+console.log( getIndexOfElement(array9, 12));
+console.log( getIndexOfElement(array9, 15));
+
+
 
 // ___________Task8__________
 function increasingSelectionSort (array) {
