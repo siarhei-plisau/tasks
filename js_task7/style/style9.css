@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    border: 1px solid black;
+    width: 182px;
+    height: 209px;
+}
+.container img {
+    display: none;
+}
+button {
+    margin: 0 10px
+}

@@ -1,0 +1,42 @@
+.form-user {
+    border: 2px solid rgb(131, 129, 129);
+    border-radius: 7px;
+    width: 750px;
+    margin: 20px 20px;
+}
+.form-user p {
+    margin: 7px 7px;
+    font-family: Verdana;
+    font-size: 1 rem;
+    text-decoration: unset;
+}
+.input-user {
+    margin: 10px 10px;
+}
+.button {
+    background-color: aquamarine;
+    color: black;
+    font-family: Verdana;
+    font-size: 1 rem;
+    border-width: 1px;
+    margin-left: 5px;
+}
+.button:hover {
+    background-color: rgb(118, 189, 165);
+}
+.style-item {
+    font-family: Verdana;
+    font-size: 1 rem;
+}
+ul>li {
+    list-style: none;
+    border: 1px solid black;
+    margin-top: 7px;
+    width: 660px;
+    background-color: rgb(211, 209, 209);
+        
+}
+input[type=checkbox], label {
+    vertical-align: middle;
+   
+}
