@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  width: 100%;
+  display: inline-flex;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.resultTable {
+    margin: auto;
+    font-size: 12px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 400px;
+  }
+  tr, td, th {
+    border: 1px solid grey;
+    text-align: center;
+    vertical-align: middle;
+    word-break: keep-all;
+  }
+
+  
+.wrapperPreloader {
+  width: 100%;
+  height: 100%;
+}
+.spinnerPulse {
+  width: 4em;
+  height: 4em;
+  margin: auto;
+  background-color: rgb(111, 216, 101);
+  border-radius: 100%;
+  animation: sk-spinner-pulse 1.0s infinite ease-in-out;
+  }
+  
+  @keyframes sk-spinner-pulse {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+
+  .error {
+    margin: 20px auto;
+    text-align: center;
+    width: 200px;
+    border: 1px solid red;
+  }
+  #idUser {
+    width: 67px;
+  }
+  .containerResponse {
+    flex-basis: 50%;
+    border: 1px solid black;
+    border-left: none;
+     width: 700px;
+    height: 545px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .currentUrl {
+    color: black;
+    background-color: rgb(207, 200, 200);
+  }
+.wrapperForms {
+  flex-basis: 50%;
+  height: 545px;
+  background-color: rgb(240, 235, 235);
+  width: 50%;
+  border: 1px solid black;
+}
+
+button {
+  width: 180px;
+  background-color: rgb(92, 224, 180);
+  border-radius: 3px;
+  border: none;
+  height: 30px;
+  margin-top: 10px;
+}
+  button:focus {
+      outline: none; 
+  }
+
+ button:hover {
+      background-color: #30ac81;
+      
+  }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+#textareaPost {
+  width: 460px;
+  height: 170px;
+}
+
+lable {
+  margin-top: 5px;
+}
+select, input {
+  margin-left: 5px;
+}
+.deleteXMLHttpRequestButton,
+.deleteFetchRequestButton {
+  margin-left: 10px;
+}

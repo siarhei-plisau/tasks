@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="wrapperForms">
+    <form id="formSelectUrl">
+      <span>Current URL for Request: <span class="currentUrl"></span></span>
+      <!-- <br> -->
+      <lable>Section
+        <select name = "section" id="sectionGet">
+          <option value = "users/" selected>users</option>
+          <option value = "">-</option>
+        </select>
+      </lable>
+      <!-- <br> -->
+      <lable>Subsection
+        <select name = "section" id="subSection">
+          <option value = "albums/" selected>albums</option>
+          <option value = "todos/">todos</option>
+          <option value = "posts/">posts</option>
+          <option value = "">-</option>
+        </select>
+      </lable>
+      <!-- <br> -->
+      <lable>User id<input type="number" id="idUser"></lable>
+      <!-- <br> <br> -->
+      <button type="button" class="getXMLHttpRequest">GET XMLHttp Request</button>
+      <button type="button" class="getFetchRequest">GET FETCH Request</button>
+      <!-- <br> -->
+    </form>
+    <hr>
+    <form >
+      <textarea name="" id="textareaPost" cols="40" rows="10" placeholder="Enter the JSON for POST request"></textarea>
+      <br>
+      <button type="button" class="postXmlHttpRequestButton">POST XMLHttpRequest</button>
+      <button type="button" class="postFetchRequestButton">POST FETCH Request</button>
+    </form>
+    <hr>
+    <button type="button" class="deleteXMLHttpRequestButton">DELETE XMLHttpRequest</button>
+    <button type="button" class="deleteFetchRequestButton">DELETE FetchRequest</button>
+  </div>
+  
+  <div class="containerResponse"></div>  
+
+  <script src="js/main.js"></script>  
+</body>
+</html>
